@@ -1,0 +1,108 @@
+/* This is the overall container for the info panel */
+.InfoPanel-Container-Closed {
+    position: absolute;
+    width: 20vw;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: #282c34;
+    transition: all .3s;
+    overflow: hidden;
+}
+
+.InfoPanel-Container-Open {
+    position: absolute;
+    width: 100vw;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: #282c34;
+    transition: all .3s;
+    overflow: hidden;
+}
+
+.SidebarContainer {
+    width: 20vw;
+    height: 100vh;
+    border-right: 1px solid black;
+}
+
+.menu {
+    width: 80vw;
+    height: 100vw;
+}
+/*? Character Info CSS ---------------------------------------------------------------------------------------------------------------------------*/
+
+/* This is the main container for character info section  */
+.CharacterInfo-Container {
+    height: 50vh;
+    width: 20vw;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+}
+
+.statusBar {
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    border: 1px solid black
+}
+
+.statusBar .bar {
+    height: 100%;
+    font-size: 100%;
+}
+
+.statusBarContainer {
+    width: 75%;
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+/*? Menu Buttons CSS ---------------------------------------------------------------------------------------------------------------------------*/
+/* This is the main container for Menu Button section  */
+.MenuButtons-Container {
+    display: flex;;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 20vw;
+    border-right: 1px solid black;
+}
+
+/* CSS for button */
+
+.MenuButton {
+    width: 100%;
+    height: 5vh;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MenuButton:hover {
+    background-color: #40444d;
+    cursor: pointer;
+}
+
+.MenuButton::selection {
+    color: none;
+    background: none;
+}
+
+.miniMap {
+    height: 30vh;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
