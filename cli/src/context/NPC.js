@@ -12,14 +12,33 @@ export const NPCArea = ({children}) => {
             health: 100,
             mana: 100,
             stamina: 100,
-            horny: 100
-
+            horny: 100,
+            dead: false,
+            selected: false,
+            id: 1
         }
     ]);
 
+    const selectNPC = (npcID) => {
+        
+        let npcArray = NPCArray;
+        
+        let npcFound = npcArray.find((npc, i)=>{
+
+            if(npc.id === npcID){
+                console.log("FOUND IT")
+                npcArray[i].selected = true
+
+                setNPCArray(npcArray)
+
+                return true
+            }
+        })
+    }
+
     //Normally you wrap whatever your trying to pass your context to with this. Doing it this way stops us from rewriting all the values multiple times.
     return (
-        <NPCContext.Provider value={{NPCArray, setNPCArray}}>
+        <NPCContext.Provider value={{NPCArray, setNPCArray, selectNPC}}>
             {children}
         </NPCContext.Provider>
     )

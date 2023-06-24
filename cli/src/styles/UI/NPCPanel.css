@@ -16,6 +16,10 @@
     padding: 15px
 }
 
+.selected {
+    background-color: wheat;
+}
+
 .NPCPanel-NPCBox .image {
     width: 40%;
 }

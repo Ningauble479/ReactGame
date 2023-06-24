@@ -5,8 +5,11 @@ import { NPCContext } from '../../context/NPC'
 
 
 const NPCBox = ({npc}) => {
+
+    const { selectNPC } = useContext(NPCContext)
+    console.log(npc.selected)
     return (
-        <div className='NPCPanel-NPCBox'>
+        <div className={`NPCPanel-NPCBox ${npc.selected ? 'selected' : null}`} onClick={()=>{selectNPC(npc.id)}}>
             <div className='image'>
                 Picture Here
             </div>
@@ -48,9 +51,7 @@ export const NPCPanel = () => {
 
     return (
         <div className='NPCPanel-Container'>
-            { NPCArray.map((npc, key)=>{
-                return <NPCBox npc={npc}/>
-            })}
+            {NPCArray.map((npc, key)=>{return <NPCBox npc={npc}/>})}
         </div>
     )
 }

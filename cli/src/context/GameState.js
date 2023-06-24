@@ -8,15 +8,15 @@ export const GameStateContext = createContext("")
 export const GameStateArea = ({children}) => {
     //These are our context states. This is all the info needed for our character
     const [doing, setDoing] = useState("Nothing");
-    const [currentAction, setCurrentAction] = useState(<StartActions/>)
-    const [location, setLocation] = useState("Start")
-    const [currentPage, setCurrentPage] = useState()
+    const [currentAction, setCurrentAction] = useState(<StartActions/>);
+    const [location, setLocation] = useState("Start");
+    const [currentPage, setCurrentPage] = useState();
 
     const {leftStart} = useContext(StoryContext)
 
     useEffect(()=>{
         if(!leftStart){
-            setCurrentPage(<StartScene/>)
+            setCurrentPage(<StartScene/>);
         }
     },[])
 

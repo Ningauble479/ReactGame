@@ -26,18 +26,23 @@ export const StartScene = () => {
 
 export const StartActions = () => {
     const {textArray, setTextArray} = useContext(TextContext)
-    const {active, setActive, inventory, setInventory} = useContext(InventoryContext)
+    const {active, setActive, inventory, setInventory, addItem} = useContext(InventoryContext)
 
     const specialAction = () => {
+        addItem(WoodenSword())
         setTextArray(textArray.concat("You look around and find your pack with a few items. You put it on and place the items in your bag."))
         setActive(true)
-        setInventory(inventory.concat([WoodenSword()]))
 
+    }
+
+    const specialAction2 = () => {
+        addItem(WoodenSword())
     }
 
     return (
         <div>
             <ActionButton action={specialAction} name={"Look Around"} conditions={[!active]}/>
+            <ActionButton action={specialAction2} name={"Add Sword"} conditions={[active]}/>
         </div>
     )
 }

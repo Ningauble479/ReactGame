@@ -1,6 +1,28 @@
+import { useContext } from "react"
+import { CurrentBattleContext } from "../context/CurrentBattle"
 
 
+const SplinteringSwing = () => {
+    const { currentEnemies, setCurrentEnemies } = useContext(CurrentBattleContext)
+    const { selectedEnemy } = useContext(CurrentBattleContext)
 
+    let currentEnemiesArr = currentEnemies
+    const currentEnemiesFound = currentEnemiesArr.find((enemy, i)=>{
+        if(selectedEnemy.id === enemy.id){
+            if(currentEnemiesArr[i].hp < 4){
+                currentEnemiesArr[i].dead = true
+                setCurrentEnemies(currentEnemiesArr)
+
+            } else {
+                currentEnemiesArr[i].hp = currentEnemiesArr[i].hp - 4
+                setCurrentEnemies(currentEnemiesArr)
+            }
+        }
+    })
+
+    
+
+}
 
 export const WoodenSword = () => {
     return {
@@ -9,8 +31,10 @@ export const WoodenSword = () => {
         type: "1 HD",
         element: "null",
         range: "Melee",
-        damage: 1,
-        value: 1
+        damageCards: [SplinteringSwing],
+        amount: 1,
+        value: 1,
+        id: 1
 
     }
 }

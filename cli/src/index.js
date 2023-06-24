@@ -15,6 +15,7 @@ import { TextArea } from './context/Text';
 import { InventoryArea } from './context/Inventory';
 import { MenuArea } from './context/menuContext';
 import { NPCArea } from './context/NPC';
+import { CurrentBattleArea } from './context/CurrentBattle';
 
 //This is our main route
 //!Move this at some point
@@ -38,7 +39,9 @@ root.render(
     <TextArea>
     <MenuArea>
     <NPCArea>
+    <CurrentBattleArea>
       <RouterProvider router={router} />
+    </CurrentBattleArea>
     </NPCArea>
     </MenuArea>
     </TextArea>
