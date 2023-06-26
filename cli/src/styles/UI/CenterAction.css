@@ -14,11 +14,15 @@
 .CenterAction-SceneContainer {
     width: 100%;
     height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow-y: scroll;
 }
 
 .CenterAction-SceneContainer div {
-    height: 100%;
-    width: 100%;
+    margin: 20px
 }
 
 .CenterAction-SceneContainer img {

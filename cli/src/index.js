@@ -16,6 +16,7 @@ import { InventoryArea } from './context/Inventory';
 import { MenuArea } from './context/menuContext';
 import { NPCArea } from './context/NPC';
 import { CurrentBattleArea } from './context/CurrentBattle';
+import { MapArea } from './context/Map';
 
 //This is our main route
 //!Move this at some point
@@ -32,11 +33,12 @@ root.render(
   //React Strict Mode only refreshes once per update rather than twice.
   <React.StrictMode>
     {/* This will provide our routes */}
+    <TextArea>
+    <MapArea>
     <InventoryArea>
     <CharacterArea>
     <GameStateArea>
     <StoryArea>
-    <TextArea>
     <MenuArea>
     <NPCArea>
     <CurrentBattleArea>
@@ -44,11 +46,12 @@ root.render(
     </CurrentBattleArea>
     </NPCArea>
     </MenuArea>
-    </TextArea>
     </StoryArea>
     </GameStateArea>
     </CharacterArea>
     </InventoryArea>
+    </MapArea>
+    </TextArea>
   </React.StrictMode>
 );
 

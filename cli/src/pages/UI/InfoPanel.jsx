@@ -5,6 +5,7 @@ import characterPortrait from '../../pictures/Character/Placeholder.jpg'
 import { MenuContext } from '../../context/menuContext'
 import { Inventory } from '../menu/Inventory'
 import { CharacterSheet } from '../menu/CharacterSheet'
+import { MapPanel } from '../Map'
 
 //Main Info Panel Component. This will house things like our character card/Health and buttons to take you to different in game menus.
 export const InfoPanel = () => {
@@ -85,8 +86,7 @@ export const InfoPanel = () => {
                     }
                 </div>
                 <div className='miniMap'>
-                    Map
-
+                    <MapPanel/>
                 </div>
             </div>
             <div className='menu'>

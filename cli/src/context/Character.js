@@ -12,10 +12,45 @@ export const CharacterArea = ({children}) => {
     const [horny, setHorny] = useState(100);
     const [name, setName] = useState("Devon");
 
+    const maxStats = (stats) => {
+        for(let i = 0; i < stats.length; i++){
+            switch(stats[i]) {
+                case "Health":
+                    setHealth(100);
+                    break;
+                case "Stamina":
+                    setStamina(100);
+                    break;
+                case "Mana":
+                    setMana(100)
+                    break;
+                case "Horny":
+                    setHorny(100);
+                    break;
+                default:
+                    console.log("No stat given to maxStat or unkown stat given to maxStat. maxStat requires a stat.")
+                    break;
+            }
+        }      
+    }
+
+    const state = {
+        health,
+        setHealth,
+        stamina,
+        setStamina,
+        mana,
+        setMana,
+        horny,
+        setHorny,
+        name,
+        setName,
+        maxStats
+    }
 
     //Normally you wrap whatever your trying to pass your context to with this. Doing it this way stops us from rewriting all the values multiple times.
     return (
-        <CharacterContext.Provider value={{health, setHealth, stamina, setStamina, mana, setMana, horny, setHorny, name, setName}}>
+        <CharacterContext.Provider value={state}>
             {children}
         </CharacterContext.Provider>
     )

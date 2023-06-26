@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CurrentBattleContext } from "../context/CurrentBattle"
+import { CurrentBattleContext } from "../../context/CurrentBattle"
 
 
 const SplinteringSwing = () => {
@@ -16,6 +16,7 @@ const SplinteringSwing = () => {
             } else {
                 currentEnemiesArr[i].hp = currentEnemiesArr[i].hp - 4
                 setCurrentEnemies(currentEnemiesArr)
+                //what
             }
         }
     })

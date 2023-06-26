@@ -1,0 +1,42 @@
+.MapContainer-Full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #282C34;
+    transition: height .1s, width .1s;
+}
+
+.MapContainer-Mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 30vh;
+    z-index: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #282C34;
+    transition: height .1s, width .1s;
+    border-top: 1px solid black;
+}
+
+.MapContainer-Full .RoomSmall {
+    width: 250px;
+    height: 250px;
+    transition: height .5s, width .5s;
+    border: 1px solid black;
+}
+
+.MapContainer-Mini .RoomSmall {
+    width: 100px;
+    height: 100px;
+    transition: all 5s;
+    border: 1px solid black;
+}

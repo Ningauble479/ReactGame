@@ -1,11 +1,12 @@
-import { useContext } from "react"
-import { InventoryContext } from "../../context/Inventory"
+import { useEffect } from "react"
+import { useInventoryContext } from "../../context/Inventory"
 import '../../styles/Menus/Inventory.css'
+import { WoodenSword } from "../../Items/Weapons/Weapons"
 
 
 
 export const Inventory = () => {
-    const {inventory} = useContext(InventoryContext)
+    const {inventory, addItem} = useInventoryContext()
 
     const itemTypes = ['Head', 'Body', 'Hands', 'Feet', 'Weapons', 'Protective', 'Special']
     const ItemType = ({name}) => {
@@ -15,9 +16,10 @@ export const Inventory = () => {
             </div>
         )
     }
-
+    useEffect(()=>{
+        console.log("what")
+    },[inventory])
     const ItemRow = ({item}) => {
-        console.log(item.item)
         return (
             <div className="ItemRow">
                 <div className="StatBox">{item.name}</div>
@@ -48,6 +50,9 @@ export const Inventory = () => {
                     <div className="StatBox">Amount</div>
                     <div className="StatBox">Value</div>
                     <div className="StatBox">Value Total</div>
+                </div>
+                <div>
+                    <button onClick={()=>addItem(WoodenSword())}></button>
                 </div>
                 <div className="ItemView">
                     {inventory.map((item)=>{return <ItemRow item={item}/>})}
