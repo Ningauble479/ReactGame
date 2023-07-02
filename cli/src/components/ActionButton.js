@@ -1,15 +1,9 @@
-
-
-
-
-
 export const ActionButton = ({action, name, conditions}) => {
-    console.log(conditions)
-    let checker = conditions => conditions.every(v => v === true)
-    console.log(checker(conditions))
-    if(checker(conditions)){
+    console.log(action)
+    let checker = conditions => {if(conditions && conditions !== true)return conditions.every(v => v === true);else return true}
+    if(checker(conditions) || conditions === undefined){
         return (
-            <div className="actionButton" onClick={action}>
+            <div className="actionButton" onClick={()=>action()}>
                 {name}
             </div>
         )

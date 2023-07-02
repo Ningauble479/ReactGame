@@ -9,7 +9,7 @@ export const TextArea = ({children}) => {
     const [textArray, setTextArray] = useState([]);
     
     const addToTextArray = (text) => {
-        setTextArray(textArray.concat(text))
+        setTextArray([text].concat(textArray))
     }
 
     //Normally you wrap whatever your trying to pass your context to with this. Doing it this way stops us from rewriting all the values multiple times.

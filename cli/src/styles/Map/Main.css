@@ -1,8 +1,5 @@
 .MapContainer-Full {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+    max-width: 100vw;
     height: 100vh;
     z-index: 999;
     position: fixed;
@@ -10,12 +7,10 @@
     left: 0;
     background-color: #282C34;
     transition: height .1s, width .1s;
+    overflow: scroll;
 }
 
 .MapContainer-Mini {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 20vw;
     height: 30vh;
     z-index: 0;
@@ -25,18 +20,61 @@
     background-color: #282C34;
     transition: height .1s, width .1s;
     border-top: 1px solid black;
+    overflow: auto;
 }
 
 .MapContainer-Full .RoomSmall {
-    width: 250px;
-    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 200px;
+    height: 200px;
+
+    justify-self: center;
+    align-self: center;
+
     transition: height .5s, width .5s;
     border: 1px solid black;
 }
 
+.MapContainer-Full .RoomBlank {
+    min-width: 10vw;
+    height: 20vh;
+    transition: height .5s, width .5s;
+}
+
 .MapContainer-Mini .RoomSmall {
     width: 100px;
-    height: 100px;
-    transition: all 5s;
+    height:100px;
     border: 1px solid black;
+}
+
+
+.MapContainer-Full .FullMap {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(15, 250px);
+    grid-template-rows: repeat(15, 250px);
+}
+
+.MapContainer-Mini .FullMap {
+    padding: 200px;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+.MapContainer-Mini .Blank {
+    display: none;
+}
+
+.MapContainer-Full .currentRoom {
+    background-color: wheat;
+}
+
+.MapContainer-Mini .currentRoom {
+    background-color: wheat;
 }

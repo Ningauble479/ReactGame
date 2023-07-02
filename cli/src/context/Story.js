@@ -7,7 +7,7 @@ export const StoryContext = createContext("")
 export const StoryArea = ({children}) => {
     //These are our context states. This is all the info needed for our character
     const [leftStart, setLeftStart] = useState(false);
-    
+        
 
     //Normally you wrap whatever your trying to pass your context to with this. Doing it this way stops us from rewriting all the values multiple times.
     return (

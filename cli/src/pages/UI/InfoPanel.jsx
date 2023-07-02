@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import '../../styles/UI/InfoPanel.css'
 import { CharacterContext } from '../../context/Character'
-import characterPortrait from '../../pictures/Character/Placeholder.jpg'
+import characterPortrait from '../../pictures/Character/Placeholder.png'
 import { MenuContext } from '../../context/menuContext'
 import { Inventory } from '../menu/Inventory'
 import { CharacterSheet } from '../menu/CharacterSheet'

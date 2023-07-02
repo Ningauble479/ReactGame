@@ -40,3 +40,21 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  align-items: space-between;
+}

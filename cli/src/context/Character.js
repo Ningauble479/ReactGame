@@ -6,13 +6,14 @@ export const CharacterContext = createContext("")
 //Use this as a react component. Whatever you wrap with this will have access to all of the values within.
 export const CharacterArea = ({children}) => {
     //These are our context states. This is all the info needed for our character
-    const [health, setHealth] = useState(100);
+    const [health, setHealth] = useState(50);
     const [stamina, setStamina] = useState(100);
     const [mana, setMana] = useState(100);
-    const [horny, setHorny] = useState(100);
+    // const [horny, setHorny] = useState(100);
     const [name, setName] = useState("Devon");
 
     const maxStats = (stats) => {
+        console.log(stats)
         for(let i = 0; i < stats.length; i++){
             switch(stats[i]) {
                 case "Health":
@@ -24,9 +25,9 @@ export const CharacterArea = ({children}) => {
                 case "Mana":
                     setMana(100)
                     break;
-                case "Horny":
-                    setHorny(100);
-                    break;
+                // case "Horny":
+                    // setHorny(100);
+                    // break;
                 default:
                     console.log("No stat given to maxStat or unkown stat given to maxStat. maxStat requires a stat.")
                     break;
@@ -41,8 +42,8 @@ export const CharacterArea = ({children}) => {
         setStamina,
         mana,
         setMana,
-        horny,
-        setHorny,
+        // horny,
+        // setHorny,
         name,
         setName,
         maxStats

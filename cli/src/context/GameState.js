@@ -9,8 +9,8 @@ export const GameStateArea = ({children}) => {
     //These are our context states. This is all the info needed for our character
     const [doing, setDoing] = useState("Nothing");
     const [currentAction, setCurrentAction] = useState(<StartActions/>);
-    const [location, setLocation] = useState("Start");
-    const [currentPage, setCurrentPage] = useState();
+    const [location, setLocation] = useState({x: 8, y: 1});
+    const [currentRoom, setCurrentRoom] = useState();
     const [scene, setScene] = useState({})
 
     const state = {
@@ -20,8 +20,8 @@ export const GameStateArea = ({children}) => {
         setCurrentAction,
         location,
         setLocation,
-        currentPage,
-        setCurrentPage,
+        currentRoom,
+        setCurrentRoom,
         scene,
         setScene
     }
